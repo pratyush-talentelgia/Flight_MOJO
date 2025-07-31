@@ -18,7 +18,7 @@ class DashboardState extends State<Dashboard> {
     HomeScreen(),
     BookingsAndTicketsScreen(),
     Center(child: Text('Offers')),
-    TabScreen(),
+    Center(child: Text("Profile"),),
   ];
 
   void onItemTapped(int index) {

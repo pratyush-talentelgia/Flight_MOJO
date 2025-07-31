@@ -1,3 +1,4 @@
+import 'package:flights_mojo/core/extension/screen_size.dart';
 import 'package:flights_mojo/features/home/presentation/widget/passenger_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/common_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/tappable_field.dart';
@@ -105,8 +106,16 @@ class _MultiCityTabViewState extends State<MultiCityTabView> {
                     },
                   ),
                   const SizedBox(height: 10),
+                  Text(
+                    'Depart',
+                    style: TextStyle(
+                      fontSize: context.scaleFont(14),
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: context.screenHeight*0.01),
                   DatePickerField(
-                    label: 'Depart',
                     selectedDate: segment['departDate'],
                     isEnabled: true,
                     onDateSelected: (date) => setState(() {

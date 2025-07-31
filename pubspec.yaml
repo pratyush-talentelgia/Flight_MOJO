@@ -45,6 +45,10 @@ dependencies:
   http: ^1.2.2
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.8.0
+  torn_ticket: ^0.1.0
+  dotted_dashed_line: ^0.0.3
+  barcode_widget: ^2.0.4
+  flip_card: ^0.7.0
 
 
 

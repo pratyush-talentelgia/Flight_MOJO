@@ -1,3 +1,4 @@
+import 'package:flights_mojo/core/extension/screen_size.dart';
 import 'package:flights_mojo/features/home/presentation/widget/passenger_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/common_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/tappable_field.dart';
@@ -78,10 +79,32 @@ class _RoundTripTabViewState extends State<RoundTripTabView> {
         ),
         const SizedBox(height: 10),
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Depart',
+              style: TextStyle(
+                fontSize: context.scaleFont(14),
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            SizedBox(width: context.screenWidth*0.35),
+            Text(
+              'Return',
+              style: TextStyle(
+                fontSize: context.scaleFont(14),
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: context.screenHeight*0.01),
+        Row(
           children: [
             Expanded(
               child: DatePickerField(
-                label: 'Depart',
                 selectedDate: widget.flightSegment['departDate'],
                 isEnabled: true,
                 onDateSelected: widget.onDepartDateSelected,
@@ -90,7 +113,6 @@ class _RoundTripTabViewState extends State<RoundTripTabView> {
             const SizedBox(width: 16),
             Expanded(
               child: DatePickerField(
-                label: 'Return',
                 selectedDate: widget.returnDate,
                 isEnabled: true,
                 onDateSelected: widget.onReturnDateSelected,

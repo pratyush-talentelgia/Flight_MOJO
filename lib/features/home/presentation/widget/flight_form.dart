@@ -57,38 +57,17 @@ class _FlightFormState extends State<FlightForm> {
     return Card(
       color: Colors.white,
       elevation: 7,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height*0.63,
+            Flexible(
               child: CommonTabBar(
-                tabs: [
-                  Tab(
-                    child: Text(
-                      'One Way',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Text(
-                      'Round Trip',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                  Tab(
-                    child: Text(
-                      'Multi City',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
+                tabs: const [
+                  Tab(child: Text('One Way', style: TextStyle(fontWeight: FontWeight.w600))),
+                  Tab(child: Text('Round Trip', style: TextStyle(fontWeight: FontWeight.w600))),
+                  Tab(child: Text('Multi City', style: TextStyle(fontWeight: FontWeight.w600))),
                 ],
                 tabViews: [
                   OneWayTabView(

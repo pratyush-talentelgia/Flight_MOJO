@@ -30,7 +30,7 @@ class _BookingsAndTicketsScreenState extends State<BookingsAndTicketsScreen> {
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.grey[100],
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(16),
               bottomRight: Radius.circular(16),

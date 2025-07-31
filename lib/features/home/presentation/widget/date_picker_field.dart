@@ -4,14 +4,12 @@ import 'package:flights_mojo/core/theme/color_themes.dart';
 import 'package:flights_mojo/core/theme/text_theme.dart';
 
 class DatePickerField extends StatelessWidget {
-  final String label;
   final DateTime? selectedDate;
   final bool isEnabled;
   final Function(DateTime) onDateSelected;
 
   const DatePickerField({
     super.key,
-    required this.label,
     required this.selectedDate,
     required this.isEnabled,
     required this.onDateSelected,
@@ -40,14 +38,7 @@ class DatePickerField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: AppTextTheme.lightTextTheme.labelMedium, // Use themed label style
-        ),
-        const SizedBox(height: 8),
+    return
         GestureDetector(
           onTap: isEnabled ? () => _selectDate(context) : null,
           child: Container(
@@ -85,8 +76,6 @@ class DatePickerField extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ],
     );
   }
 }

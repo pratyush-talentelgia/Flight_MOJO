@@ -1,3 +1,4 @@
+import 'package:flights_mojo/core/extension/screen_size.dart';
 import 'package:flights_mojo/features/home/presentation/widget/passenger_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/common_bottom_sheet.dart';
 import 'package:flights_mojo/widgets/tappable_field.dart';
@@ -27,15 +28,15 @@ class _OneWayTabViewState extends State<OneWayTabView> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'From',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: context.scaleFont(14),
             fontWeight: FontWeight.w500,
             color: Colors.grey,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: context.screenHeight*0.01),
         TappableField(
           hintText: widget.flightSegment['fromController'].text.isEmpty
               ? 'Origin'
@@ -49,16 +50,16 @@ class _OneWayTabViewState extends State<OneWayTabView> {
             );
           },
         ),
-        const SizedBox(height: 10),
-        const Text(
+        SizedBox(height: context.screenHeight*0.015),
+        Text(
           'To',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: context.scaleFont(14),
             fontWeight: FontWeight.w500,
             color: Colors.grey,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: context.screenHeight*0.01),
         TappableField(
           hintText: widget.flightSegment['toController'].text.isEmpty
               ? 'Destination'
@@ -72,23 +73,31 @@ class _OneWayTabViewState extends State<OneWayTabView> {
             );
           },
         ),
-        const SizedBox(height: 10),
-        DatePickerField(
-          label: 'Depart',
-          selectedDate: widget.flightSegment['departDate'],
-          isEnabled: true,
-          onDateSelected: widget.onDepartDateSelected,
-        ),
-        const SizedBox(height: 10),
-        const Text(
-          'Passengers',
+        SizedBox(height: context.screenHeight*0.015),
+        Text(
+          'Depart',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: context.scaleFont(14),
             fontWeight: FontWeight.w500,
             color: Colors.grey,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: context.screenHeight*0.01),
+        DatePickerField(
+          selectedDate: widget.flightSegment['departDate'],
+          isEnabled: true,
+          onDateSelected: widget.onDepartDateSelected,
+        ),
+        SizedBox(height: context.screenHeight*0.01),
+        Text(
+          'Passengers',
+          style: TextStyle(
+            fontSize: context.scaleFont(14),
+            fontWeight: FontWeight.w500,
+            color: Colors.grey,
+          ),
+        ),
+        SizedBox(height: context.screenHeight*0.01),
         TappableField(
           hintText: 'Travellers and Class',
           iconData: Icons.person,
@@ -106,7 +115,7 @@ class _OneWayTabViewState extends State<OneWayTabView> {
             );
           },
         ),
-        const SizedBox(height: 32),
+        SizedBox(height: context.screenHeight*0.03),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.9,
           child: ElevatedButton(
