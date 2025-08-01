@@ -392,6 +392,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  qr_widget:
+    dependency: "direct main"
+    description:
+      name: qr_widget
+      sha256: "262d11b7a37c837079e8fa3bd1497db448fd4bb045057a1293c699d125d7f87e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   remixicon:
     dependency: "direct main"
     description:
